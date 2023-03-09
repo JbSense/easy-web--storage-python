@@ -1,0 +1,8 @@
+.Content {
+  width: 100%;
+  min-height: var(--content-height);
+  display: flex;
+  justify-content: center;
+  gap: 12.8rem;
+  position: relative;
+}

@@ -21,38 +21,45 @@ class CAuth:
 
 
   def login(self, data):
-    if Users.objects.filter(users_email = data['users_email']).exists():
-      serializers = SUser(Users.objects.get(users_email = data['users_email'])).data
+    if Users.objects.filter(users_email = data['email']).exists():
+      serializer = SUser(Users.objects.get(users_email = data['email'])).data
 
-      if serializers['users_password'] == data['users_password']:
+      if serializer['users_password'] == data['password']:
         return Response({
-          'data': serializers,
-          'token': self.tokenGeneration(serializers['users_id'])
+          'logged': True,
+          'user': serializer['users_id'],
+          'token': self.tokenGeneration(serializer['users_id'])
         })
 
     return Response(
       {
+        'logged': False,
         'error': 'Unauthorized',
-        'message': 'Login incorreto.'
-      },
-      status = 401
+        'message': 'Login incorreto'
+      }
     )
 
 
   def authenticate(self, token):
     try:
       jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
-
+      print('Authenticated')
       return True
 
     except jwt.ExpiredSignatureError:
+      print('Not authenticated')
       return Response(
-        {'error': 'Token expired.'},
-        status = 401
+        {
+          'error': True,
+          'message': 'Token expired'
+        }
       )
     
     except:
+      print('Not authenticated')
       return Response(
-        {'error': 'Token incorrect.'},
-        status = 401
+        {
+          'error': True,
+          'message': 'Token incorrect'
+        }
       )

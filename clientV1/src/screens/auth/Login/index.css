@@ -1,0 +1,65 @@
+.Login {
+  grid-row: 1/3;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--mp-ls);
+}
+
+.Login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mp-m);
+}
+
+.Login-input {
+  width: 100%;
+  height: 4rem;
+  border-bottom: 2px solid var(--c-gray-s);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Login--field {
+  width: 100%;
+}
+
+.Login--field:focus ~ .Login--label,
+.Login--field:valid ~ .Login--label {
+  font-size: 12px;
+  font-weight: 400;
+  transform: translateY(-23px);
+}
+
+.Login--label {
+  position: absolute;
+  font-size: var(--f-s);
+  font-weight: 500;
+  color: var(--c-gray-t);
+  transition: .3s ease;
+}
+
+.Login-not-account {
+  margin-top: -24px;
+}
+
+.Login-not-account,
+.Login-not-account > a {
+  color: var(--c-gray-t);
+  font-size: var(--f-xs);
+  font-weight: 500;
+}
+
+.Login-not-account > a {
+  color: var(--c-dark);
+  border-bottom: none;
+  border-bottom: 1.2px solid var(--c-dark);
+}

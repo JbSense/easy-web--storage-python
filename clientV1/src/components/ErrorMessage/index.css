@@ -1,0 +1,10 @@
+.Error-message {
+  position: absolute;
+  top: 20%;
+  /* padding: 8px var(--mp-s); */
+  border-radius: 8px;
+  /* background-color: var(--c-red); */
+  font-size: var(--f-s);
+  font-weight: 700;
+  color: var(--c-red);
+}

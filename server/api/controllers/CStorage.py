@@ -1,3 +1,4 @@
+from ast import Return
 from rest_framework.response import Response
 from api.controllers.CInventory import CInventory
 from api.controllers.CItem import CItem
@@ -56,8 +57,8 @@ class CStorage:
     })
 
 
-  def getAll(self):
-    self.item = SItem(Items.objects.all(), many = True).data
+  def getAll(self, user):
+    self.item = SItem(Items.objects.filter(user_id = user), many = True).data
     self.inventory = SInventory(Inventories.objects.all(), many = True).data
 
     data = []
@@ -73,8 +74,8 @@ class CStorage:
     return Response(data)
 
 
-  def getAllSimple(self):
-    items = Items.objects.all().values('items_id', 'items_name')
+  def getAllSimple(self, user):
+    items = Items.objects.filter(user_id = user).values('items_id', 'items_name', 'items_code')
     inventories = Inventories.objects.all().values('items_id', 'inventories_available')
 
     for x in items:
@@ -84,3 +85,15 @@ class CStorage:
 
     return Response(items)
 
+
+  def search(self, data):
+    if data['filter'] == 'name':
+      items = Items.objects.filter(items_name__icontains = data['words'])
+    
+    elif data['filter'] == 'code':
+      items = Items.objects.filter(items_code__contains = data['words'])
+
+    else:
+      return Response(False)
+
+    return Response(SItem(items, many = True).data)

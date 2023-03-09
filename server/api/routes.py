@@ -13,9 +13,10 @@ urlpatterns = [
   path('storage-create', views.StorageCreate),
   path('storage-update', views.StorageUpdate),
   path('storage-delete/<int:id>', views.StorageDelete),
-  path('storage-getAll', views.StorageGetAll),
-  path('storage-getAllSimple', views.StorageGetAllSimple),
+  path('storage-getAll/<int:user>', views.StorageGetAll),
+  path('storage-getAllSimple/<int:user>', views.StorageGetAllSimple),
   path('storage-getById/<int:id>', views.StorageGetById),
+  path('storage-search', views.StorageSearch),
 
 
   # User

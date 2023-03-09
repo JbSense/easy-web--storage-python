@@ -1,0 +1,126 @@
+
+.ui-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 var(--mp-s);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  background-color: var(--c-light);
+  border: 2px solid var(--c-gray);
+  border-radius: 8px;
+}
+
+.ui-input--field::placeholder,
+.ui-textarea--field::placeholder {
+  color: transparent;
+}
+
+.ui-input--field:placeholder-shown ~ .ui-input--label {
+  transform: translateY(0);
+  padding: 0;
+  font-size: var(--f-s);
+  font-weight: 400;
+}
+
+.ui-input--label,
+.ui-input--field:focus ~ .ui-input--label,
+.ui-textarea--label,
+.ui-textarea--field:focus ~ .ui-textarea--label {
+  background-color: var(--c-light);
+  padding: 0 4px;
+  font-size: var(--f-xs);
+  font-weight: 700;
+  color: var(--c-gray);
+  position: absolute;
+  transform: translateY(-25px);
+  transition: .3s ease-in-out;
+  pointer-events: none;
+}
+
+.ui-textarea {
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  background-color: var(--c-light);
+  padding: var(--mp-s) var(--mp-s);
+  border-radius: var(--mp-l);
+  border: 2px solid var(--c-gray);
+}
+
+.ui-textarea--field:placeholder-shown ~ .ui-textarea--label {
+  padding: 0;
+  transform: translateY(0);
+  font-size: var(--f-s);
+  font-weight: 400;
+}
+
+.ui-textarea--field:focus ~ .ui-textarea--label,
+.ui-textarea--label {
+  position: absolute;
+  transform: translateY(-27px);
+  font-size: var(--f-xs);
+  font-weight: 700;
+  color: var(--c-gray);
+  pointer-events: none;
+  background-color: var(--c-light);
+  padding: 0 .5rem;
+  transition: .3s ease-in-out;
+}
+
+.ui-select {
+  width: 90%;
+  padding: 0 var(--mp-s);
+  background-color: var(--c-dark);
+  border-radius: var(--mp-l);
+}
+
+.ui-select-head {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ui-select--selected {
+  font-size: var(--f-s);
+  color: var(--c-light);
+}
+
+.ui-select--arrow {
+  width: 3rem;
+  transform: rotate(180deg);
+}
+
+.ui-select-options {
+  padding-bottom: var(--mp-s);
+  display: none;
+  flex-direction: column;
+  gap: var(--mp-s);
+  align-items: flex-start;
+}
+
+.ui-select--input {
+  display: none;
+}
+
+.ui-select--label {
+  font-size: var(--f-s);
+  color: var(--c-light);
+  cursor: pointer;
+}
+
+.ui-select-options.down-options {
+  display: flex;
+}
+
+.ui-invalid-field {
+  border-color: var(--c-red);
+}
+
+.ui-invalid-field > label {
+  color: var(--c-red);
+}

@@ -1,0 +1,39 @@
+.Login {
+  width: 100%;
+  max-width: 50rem;
+  height: 100vh;
+  padding: 0 var(--mp-s);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mp-m);
+}
+
+.Login__welcome {
+  width: 100%;
+}
+
+.Login__welcome > p {
+  margin-top: 4px;
+}
+
+.Login .ui-title {
+  width: 100%;
+  text-align: start;
+}
+
+.Login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mp-xs);
+}
+
+@media (min-width: 1024px) {
+  .Login {
+    padding: 0;
+  }
+}

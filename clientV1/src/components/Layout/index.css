@@ -1,0 +1,15 @@
+.Layout {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0 var(--mp-s);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .Layout {
+    padding: 0 var(--mp-m);
+  }
+}

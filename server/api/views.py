@@ -78,19 +78,19 @@ def StorageGetById(request, id):
 
 
 @api_view(['GET'])
-def StorageGetAll(request):
+def StorageGetAll(request, user):
   auth = CAuth().authenticate(request.headers['Authorization'])
   if not auth == True: return auth
 
-  return CStorage().getAll()
+  return CStorage().getAll(user)
 
 
 @api_view(['GET'])
-def StorageGetAllSimple(request):
+def StorageGetAllSimple(request, user):
   auth = CAuth().authenticate(request.headers['Authorization'])
   if not auth == True: return auth
 
-  return CStorage().getAllSimple()
+  return CStorage().getAllSimple(user)
 
 
 @api_view(['PUT'])
@@ -107,6 +107,14 @@ def StorageDelete(request, id):
   if not auth == True: return auth
   
   return CItem.delete(id)
+
+
+@api_view(['POST'])
+def StorageSearch(request):
+  auth = CAuth().authenticate(request.headers['Authorization'])
+  if not auth == True: return auth
+
+  return CStorage().search(request.data)
 
 
 """

@@ -1,0 +1,59 @@
+.Filter {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  max-width: 50rem;
+  padding: 0 var(--mp-xs);
+  background-color: var(--c-dark);
+  border-radius: var(--mp-xxs);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+}
+
+.filter-open {
+  padding: 0 var(--mp-xs) var(--mp-xs) var(--mp-xs);
+}
+
+.Filter-show {
+  width: 100%;
+  height: 5rem;
+  border-radius: var(--mp-xs);
+  background-color: var(--c-dark);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Filter--arrow {
+  width: 3rem;
+  transform: rotate(180deg);
+  transition: .3s ease-in-out;
+}
+
+.filter-open .Filter--arrow {
+  transform: rotate(0);
+}
+
+.Filter-options {
+  display: none;
+  flex-direction: column;
+  gap: var(--mp-s);
+  align-items: flex-start;
+}
+
+.filter-open .Filter-options {
+  display: flex;
+}
+
+.Filter--field {
+  display: none;
+}
+
+.Filter--label {
+  font-size: var(--f-s);
+  color: var(--c-light);
+  cursor: pointer;
+}

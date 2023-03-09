@@ -3,14 +3,15 @@ from app.models import Items
 from api.serializers import SItem
 
 class CItem:
-  def create(data):  
+  def create(data):
     serializer = SItem(
       data = {
         'items_name': data['name'],
         'items_code': data['code'],
         'items_desc': data['desc'],
         'items_buy_price': data['buy_price'],
-        'items_sale_price': data['sale_price']
+        'items_sale_price': data['sale_price'],
+        'user_id': data['user']
       }
     )
 

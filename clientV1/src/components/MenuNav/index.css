@@ -1,0 +1,73 @@
+.Menu-nav {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--mp-xxs);
+  background-color: var(--c-dark);
+  position: absolute;
+  right: 0;
+  transition: 1s ease-in-out;
+}
+
+.Menu-nav a {
+  color: var(--c-light);
+}
+
+.Menu-nav-head {
+  width: 12rem;
+  padding: var(--mp-xs) var(--mp-s);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  z-index: 12;
+}
+
+.Menu-nav--title {
+  font-size: var(--f-s);
+  color: var(--c-light);
+}
+
+.Menu-nav--icon {
+  width: 16px;
+  transform: rotate(180deg);
+  transition: .3s ease-in-out;
+}
+
+.Menu-nav-content {
+  padding: 0 var(--mp-s) var(--mp-s) var(--mp-s);
+  border-radius: 8px;
+  display: none;
+  flex-direction: column;
+  gap: var(--mp-s);
+  transition: .3s ease-in-out;
+}
+
+.Menu-nav:hover > .Menu-nav-content {
+  display: flex;
+}
+
+.Menu-nav--list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-xs);
+}
+
+.Menu-nav--item a {
+  font-size: var(--f-s);
+  color: var(--c-light);
+}
+
+.Menu-nav--logout {
+  font-size: var(--f-s);
+  text-align: center;
+  color: var(--c-light);
+  cursor: pointer;
+}
+
+.Menu-nav-down .Menu-nav-content {
+  display: flex;
+}
+
+.Menu-nav-down .Menu-nav--icon {
+  transform: rotate(0deg);
+}

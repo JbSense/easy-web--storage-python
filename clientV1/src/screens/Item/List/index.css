@@ -1,0 +1,8 @@
+.List {
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--mp-m);
+}

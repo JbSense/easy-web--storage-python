@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;700&display=swap');
+
+/* --- */
+:root {
+  /* Content Height */
+  --content-height: calc(100vh - 8rem);
+
+  /* Colors */
+  --c-light: #FFFAF2;
+  --c-blue: #1B64D1;
+  --c-red: #E44444;
+  --c-green: #62A543;
+  --c-gray: #979797;
+  --c-gray-s: #D2D2D2;
+  --c-gray-t: #7b8294;
+  --c-dark: #212121;
+  --c-black: #0C0C0C;
+
+  /* Font Sizes */
+  --f-xs: 1.4rem;
+  --f-s: 1.6rem;
+  --f-m: 2.4rem;
+  --f-l: 3.2rem;
+  --f-ls: 4.8rem;
+
+  /* Margin / Padding */
+  --mp-xxs: 1.2rem;
+  --mp-xs: 1.4rem;
+  --mp-s: 1.6rem;
+  --mp-m: 2.4rem;
+  --mp-l: 3.2rem;
+  --mp-ls: 4.8rem;
+
+  /* Border Radius */
+  --br-s: 12px;
+  --br-m: 18px;
+}
+
+/* Resets */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Roboto Mono', monospace;
+  text-decoration: none;
+  color: var(--c-dark);
+}
+
+body {
+  background-color: var(--c-light);
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--c-dark);
+}
+
+ul {
+  list-style: none;
+}
+
+input, textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: var(--f-s);
+  resize: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+select {
+  outline: none;
+
+  
+  border: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* UI clases */
+.ui-title {
+  font-size: var(--f-l);
+}
+
+.ui-subtitle {
+  font-size: var(--f-m);
+}
+
+.ui-small-text {
+  font-size: var(--f-xs);
+}
+
+.ui-btn-dark,
+.ui-btn-light {
+  width: 100%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: var(--f-s);
+  font-weight: 700;
+  border-radius: var(--br-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-btn-dark {
+  color: var(--c-light);
+  background-color: var(--c-dark);
+}
+
+.ui-btn-light {
+  background-color: var(--c-light);
+  border: 2px solid var(--c-black);
+}
+
+.ui-field {
+  width: 100%;
+  height: 5rem;
+  padding: 0 var(--mp-xs);
+  border: 2px solid var(--c-gray);
+  border-radius: var(--mp-xs);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.ui-field-textarea {
+  height: auto;
+  padding: var(--mp-xs);
+  align-items: flex-start;
+}
+
+.ui-field--input {
+  width: 100%;
+  font-size: var(--f-s);
+}
+
+.ui-field--label {
+  position: absolute;
+  font-size: var(--f-s);
+  color: var(--c-gray);
+  transition: .3s ease-in-out;
+  pointer-events: none;
+}
+
+.ui-field--input:focus ~ .ui-field--label,
+.ui-field--input:valid ~ .ui-field--label {
+  transform: translateY(-26px);
+  font-size: var(--f-xs);
+  font-weight: 700;
+  padding: 0 5px;
+  background-color: var(--c-light);
+  pointer-events: none;
+}

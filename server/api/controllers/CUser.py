@@ -13,10 +13,9 @@ class CUser:
         'result': True,
         'response': Response(
           {
-            'error': 'User exists',
+            'error': True,
             'message': 'E-mail já cadastrado'
-          },
-          status = 400
+          }
         )
       }
 
@@ -24,10 +23,9 @@ class CUser:
       'result': False,
       'response': Response(
         {
-          'error': 'User not exists',
+          'error': True,
           'message': 'Usuário não encontrado'
-        },
-        status = 400
+        }
       )
     }
 
@@ -47,7 +45,10 @@ class CUser:
 
       return Response(serializer.data)
 
-    return Response(serializer.errors)
+    return Response({
+      'error': True,
+      'message': serializer.errors
+    })
 
 
   def update(self, data):

@@ -43,6 +43,7 @@ class SItem(serializers.ModelSerializer):
       'items_desc',
       'items_buy_price',
       'items_sale_price',
+      'user_id'
     ]
 
 
