@@ -14,6 +14,6 @@ export const login = (credentials) => {
         }))
       }
 
-      return response.logged
+      return response
     })
 }

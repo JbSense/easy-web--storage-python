@@ -118,17 +118,38 @@ button {
   border-bottom: 1px solid var(--c-dark);
 }
 
-.ui-btn-primary {
+.ui-btn-primary,
+.ui-btn-primary-blue,
+.ui-btn-primary-red {
   width: 100%;
-  height: 50px;
+  padding: var(--mp-s) 0;
   border-radius: var(--br-apple-btn);
-  background-color: var(--c-blue-apple);
   color: var(--c-light);
   font-size: var(--f-s);
+  font-weight: 500;
 }
 
 .ui-dark-theme.ui-btn-primary {
   background-color: var(--c-gold);
+}
+
+.ui-btn-primary-blue {
+  background-color: var(--c-blue-apple);
+}
+
+.ui-btn-primary-red {
+  padding: 4px 0;
+  background-color: var(--c-red);
+}
+
+.ui-btn-secondary-red {
+  width: 100%;
+  padding: 4px 0;
+  border-radius: var(--br-apple-btn);
+  border: 2px solid var(--c-red);
+  background-color: transparent;
+  color: var(--c-red);
+  font-size: var(--f-s);
 }
 
 .ui-field {

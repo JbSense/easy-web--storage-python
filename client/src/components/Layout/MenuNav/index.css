@@ -1,0 +1,49 @@
+.Menu-nav {
+  width: 12rem;
+  padding: .8rem 1.6rem;
+  background-color: var(--c-dark);
+  border-radius: var(--br-apple-btn);
+  position: absolute;
+  right: 0;
+}
+
+.Menu-nav--open {
+  border-radius: var(--br-apple-container);
+}
+
+.Menu-nav__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.Menu-nav__menu-title {
+  font-size: var(--f-s);
+  color: var(--c-light);
+}
+
+.Menu-nav__down-arrow {
+  width: 25px;
+  transform: rotate(180deg);
+}
+
+.Menu-nav__nav {
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--mp-s);
+}
+
+.Menu-nav--open .Menu-nav__nav {
+  display: flex;
+}
+
+.Menu-nav__item {
+  font-size: var(--f-s);
+  color: var(--c-light);
+}
+
+.Menu-nav__logout {
+  margin: 4px 0 8px 0;
+}

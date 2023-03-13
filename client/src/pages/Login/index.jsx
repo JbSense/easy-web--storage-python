@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import api from '../../utils/api'
+import { setSession } from '../../redux/slices/sessionSlice'
 import { login } from '../../utils/auth/login'
 import './index.css'
 
 function Login () {
+  const dispatch = useDispatch()
   const navigate = useNavigate()
   const [values, setValues] = useState({
     email: '',
@@ -25,7 +27,10 @@ function Login () {
 
   const handleSend = () => {
     login(values).then(response => {
-      return navigate('/')
+      dispatch(setSession(response))
+      if (response.logged) return navigate('/dashboard/item-list')
+
+      console.log('login incorreto')
     })
   }
 
