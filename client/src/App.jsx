@@ -9,6 +9,8 @@ import Login from './pages/Login'
 import Logout from './pages/Logout'
 import Home from './pages/Home'
 import ItemList from './pages/Item/List'
+import ItemCreate from './pages/Item/Create'
+import ItemUpdate from './pages/Item/Update'
 
 function App () {
   const session = useSelector(state => state.session)
@@ -26,10 +28,14 @@ function App () {
             <Route path='/dashboard' element={<Layout />}>
               <Route path='home' element={<Home />} />
               <Route path='item-list' element={<ItemList />} />
+              <Route path='item-create' element={<ItemCreate />} />
+              <Route path='item-update/:id' element={<ItemUpdate />} />
             </Route>
 
             <Route path='logout' element={<Logout />} />
           </Route>
+
+          <Route path='*' element={<h1>404 Not Found</h1>} />
         </Routes>
       </BrowserRouter>
     </div>

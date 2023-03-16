@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CardItem from '../../../components/Cards/Item'
 import searchIcon from '../../../assets/icons/search-light.svg'
+import api from '../../../utils/api'
+import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
+import { setItems, updateItems } from '../../../redux/slices/itemsSlice'
 
 function List () {
+  const itemsStore = useSelector(state => state.items)
+  const user = useSelector(state => state.session.user)
+  const [items, setItemsState] = useState([])
+
+  useEffect(() => {
+    api({
+      route: 'storageGetAllSimple',
+      params: user
+    }).then(response => {
+      setItemsState(response)
+    })
+  }, [itemsStore])
+
   return (
     <div className='Item-list'>
       <div className='Item-list__search'>
@@ -12,36 +28,19 @@ function List () {
       </div>
 
       <div className='Item-list__items'>
-        <CardItem
-          id={1}
-          name='Item 01'
-          code='ITEM01'
-          available={10}
-        />
-        <CardItem
-          id={1}
-          name='Item 01'
-          code='ITEM01'
-          available={10}
-        />
-        <CardItem
-          id={1}
-          name='Item 01'
-          code='ITEM01'
-          available={10}
-        />
-        <CardItem
-          id={1}
-          name='Item 01'
-          code='ITEM01'
-          available={10}
-        />
-        <CardItem
-          id={1}
-          name='Item 01'
-          code='ITEM01'
-          available={10}
-        />
+        {
+          typeof items !== 'undefined' && items.map(item => {
+            return (
+              <CardItem
+                key={item.items_id}
+                id={item.items_id}
+                name={item.items_name}
+                code={item.items_code}
+                available={item.available}
+              />
+            )
+          })
+        }
       </div>
     </div>
   )

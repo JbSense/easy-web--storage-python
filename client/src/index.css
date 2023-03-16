@@ -101,6 +101,10 @@ button {
   font-size: var(--f-l);
 }
 
+.ui-subtitle {
+  font-size: var(--f-s);
+}
+
 .ui-subtitle-msg {
   font-size: var(--f-xs);
   font-weight: 500;

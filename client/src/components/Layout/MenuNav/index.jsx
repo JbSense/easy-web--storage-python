@@ -32,8 +32,8 @@ function MenuNav () {
 
       <nav className='Menu-nav__nav'>
         <Link to='#' className='Menu-nav__item'>Account</Link>
-        <Link to='#' className='Menu-nav__item'>Create</Link>
-        <Link to='#' className='Menu-nav__item'>List</Link>
+        <Link to='/dashboard/item-create' className='Menu-nav__item'>Adicionar</Link>
+        <Link to='/dashboard/item-list' className='Menu-nav__item'>Items</Link>
         <button className='ui-btn-primary-red Menu-nav__logout' onClick={handleLogout}>Sair</button>
       </nav>
     </div>

@@ -1,16 +1,34 @@
 import axios from 'axios'
 
+const session = JSON.parse(sessionStorage.getItem('session'))
+
 const apiBaseUrl = 'http://127.0.0.1:8000/'
-const headers = { Authorization: JSON.parse(localStorage.getItem('token')) }
+const headers = { Authorization: session !== null ? session.token : null }
 
 const routes = {
   login: {
     method: 'POST',
     path: 'auth-login'
   },
+  getById: {
+    method: 'GET',
+    path: 'storage-getById'
+  },
   storageGetAllSimple: {
     method: 'GET',
     path: 'storage-getAllSimple'
+  },
+  storageCreate: {
+    method: 'POST',
+    path: 'storage-create'
+  },
+  storageUpdate: {
+    method: 'PUT',
+    path: 'storage-update'
+  },
+  storageDelete: {
+    method: 'DELETE',
+    path: 'storage-delete'
   }
 }
 

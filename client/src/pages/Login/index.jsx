@@ -25,7 +25,7 @@ function Login () {
     document.getElementById('email-field').classList.remove('error-field')
   }
 
-  const handleSend = () => {
+  const handleLogin = () => {
     login(values).then(response => {
       dispatch(setSession(response))
       if (response.logged) return navigate('/dashboard/item-list')
@@ -76,7 +76,7 @@ function Login () {
 
       <p className='ui-pwl'>Ao fazer login, você concorda com a <Link to='/account-create'>Política de privacidade</Link> e com os Termos de uso da Easy Web.</p>
 
-      <button className='ui-dark-theme ui-btn-primary' onClick={handleSend}>Send</button>
+      <button className='ui-dark-theme ui-btn-primary' onClick={handleLogin}>Send</button>
 
       <p className='ui-pwl'>Não tem conta? <Link to='/account-create'>Crie uma aqui.</Link></p>
     </div>

@@ -4,7 +4,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 
 const NotLogged = () => {
   const logged = useSelector(state => state.session).logged
-  return !logged ? <Outlet /> : <Navigate to='/dashboard' />
+  return !logged ? <Outlet /> : <Navigate to='/dashboard/item-list' />
 }
 
 export default NotLogged

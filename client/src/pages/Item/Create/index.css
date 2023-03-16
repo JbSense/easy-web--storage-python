@@ -1,0 +1,28 @@
+.Item-create {
+  justify-self: center;
+  width: 100%;
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mp-m);
+}
+
+.Item-create__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mp-s);
+}
+
+.Item-create__prices {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--mp-xs);
+}
+
+.Item-create__prices > h2 {
+  grid-column: 1/3;
+}

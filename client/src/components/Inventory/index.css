@@ -1,0 +1,35 @@
+.Available {
+  width: 100%;
+}
+
+.Available__form {
+  margin-top: var(--mp-s);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Available__remove,
+.Available__add {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: var(--c-light);
+}
+
+.Available__remove > img,
+.Available__add > img {
+  width: 50%;
+}
+
+.Available__remove {
+  background-color: var(--c-red);
+}
+
+.Available__add {
+  background-color: var(--c-green);
+}
+
+.Available__field {
+  width: 50%;
+}
